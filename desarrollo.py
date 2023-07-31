@@ -16,10 +16,13 @@ apellidos = input ("Ingrese sus apellidos: ")
 # Para obtener el primer apellido es lo mismo
 apellido0 = apellidos.split()
 
+# Aqui definimos el NICKNAME y hacemos que todo sea minuscula con .lower()
+nickname = (nombre0[0].lower() + "." + apellido0[0].lower())
+
 f_nac = input ("Ingrese su fecha de nacimiento: ")
 CI = int (input ("Ingrese su numero de documento: "))
 
-datos = ("Nombre completo: " + nombres + apellidos + "\n" + "Fecha de nacimiento: " + f_nac + "\n" + "Cedula de Identidad Nº" + str ( CI))
+datos = ("Nombre completo: " + nombres + apellidos + "\n" + "NICKNAME: " + nickname + "\n" + "Fecha de nacimiento: " + f_nac + "\n" + "Cedula de Identidad Nº" + str ( CI))
 
 print ("Tus datos son: " + "\n" + datos)
 
@@ -29,7 +32,7 @@ print ("Tus datos son: " + "\n" + datos)
 # Para combinar dos variables se debe hacer como en 'NOMBRE COMPLETO'
 datos_xlsx = {
     'NOMBRE COMPLETO': [nombres + " " + apellidos],
-    'NICKNAME': [nombre0[0] + "." + apellido0[0]],
+    'NICKNAME': [nickname],
     'FECHA DE NACIMIENTO': [f_nac],
     'CI': [CI]
 
